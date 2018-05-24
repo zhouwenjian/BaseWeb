@@ -1,26 +1,36 @@
 package com.wen.business.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "demo", catalog = "baseweb")
 public class Demo{
 	
-	private Integer id;
-	
-	private String name;
+	@Id
+	@Column(name="d_id")
+	private Long dId;
 
-	public Integer getId() {
-		return id;
+	@Column(name="d_name")
+	private String dName;
+
+	public Long getdId() {
+		return dId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setdId(Long dId) {
+		this.dId = dId;
 	}
 
-	public String getName() {
-		return name;
+	public String getdName() {
+		return dName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setdName(String dName) {
+		this.dName = dName;
 	}
-	
+
 	
 }
