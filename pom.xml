@@ -12,7 +12,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- spring版本号 -->
-    <spring.version>4.3.14.RELEASE</spring.version>
+    <spring.version>4.2.7.RELEASE</spring.version>
 
     <!-- log4j日志包版本号 -->
     <slf4j.version>1.7.18</slf4j.version>
@@ -21,6 +21,14 @@
   </properties>
   
   <dependencies>
+  
+  	<dependency>  
+	    <groupId>javax.servlet</groupId>  
+	    <artifactId>javax.servlet-api</artifactId>  
+	    <version>3.1.0</version>  
+	    <scope>test</scope>  
+	</dependency>
+  
   	<!-- 添加jstl依赖 -->
     <dependency>
       <groupId>jstl</groupId>
@@ -152,6 +160,7 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.29</version>
     </dependency>
+    
     <!--druid-->
     <dependency>
         <groupId>com.alibaba</groupId>

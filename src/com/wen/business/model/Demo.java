@@ -1,5 +1,7 @@
 package com.wen.business.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "demo", catalog = "baseweb")
-public class Demo{
+public class Demo implements Serializable {
 	
 	@Id
 	@Column(name="d_id")
