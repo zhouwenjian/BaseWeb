@@ -20,6 +20,7 @@ import com.github.pagehelper.PageHelper;
 import com.google.common.hash.BloomFilter;
 import com.wen.business.dao.DemoMapper;
 import com.wen.business.model.Demo;
+import com.wen.util.RequestJson;
 import com.wen.util.SnowflakeIdWorker;
 
 @Api(value = "demo", tags = {"演示示例"})
@@ -102,6 +103,22 @@ public class DemoService {
 		record.setdId(dId);
 		record.setdDeleteState(-1);
 		int num=demoMapper.updateByPrimaryKeySelective(record);
+		
+		if(num>0){return true;}
+		
+		return false;
+	}
+	
+	@ApiOperation(value = "更新Demo实例", notes = "", httpMethod = "POST")
+	@ApiImplicitParams({ 
+		//@ApiImplicitParam(name = "demo", value = "{\"dID\":1,\"dName\":\"赵武\"}", paramType = "form"),
+	  })
+	@RequestMapping(value ="/updateDemo")
+	public boolean updateDemo(Demo demo) throws Exception{
+		
+		if(demo.getdId()==null||demo.getdId()==0){return false;}
+
+		int num=demoMapper.updateByPrimaryKeySelective(demo);
 		
 		if(num>0){return true;}
 		
